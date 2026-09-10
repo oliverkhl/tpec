@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two Parrots Enterprise | Premium Cambodian Spices & Agri-Food</title>
+  <style>
+    /* CSS Stylesheet based on twoparrotsgroup.com.au styling */
+    :root {
+      --primary-green: #1b5e20;
+      --accent-green: #2e7d32;
+      --light-green: #e8f5e9;
+      --dark-red: #a71d2a;
+      --text-dark: #222222;
+      --text-light: #555555;
+      --bg-light: #f9f9f9;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      color: var(--text-dark);
+      background-color: var(--bg-light);
+      line-height: 1.6;
+    }
+
+    /* Top Bar & Header */
+    .top-bar {
+      background-color: var(--primary-green);
+      color: var(--white);
+      padding: 8px 5%;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+    }
+
+    .top-bar a {
+      color: var(--white);
+      text-decoration: none;
+      margin-left: 15px;
+    }
+
+    header {
+      background: var(--white);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-badge {
+      background: var(--primary-green);
+      color: var(--white);
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+      border: 2px solid var(--dark-red);
+    }
+
+    .logo-text h1 {
+      font-size: 1.4rem;
+      color: var(--primary-green);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .logo-text span {
+      font-size: 0.75rem;
+      color: var(--dark-red);
+      font-weight: 600;
+      display: block;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    nav ul li a:hover, nav ul li a.active {
+      background-color: var(--primary-green);
+      color: var(--white);
+    }
+
+    /* Tab Sections */
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      color: var(--white);
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h2 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto 25px auto;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--dark-red);
+      color: var(--white);
+      padding: 12px 28px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn:hover {
+      background: #80141f;
+    }
+
+    /* Layout Containers */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: var(--primary-green);
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: var(--dark-red);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    /* Cards & Components */
+    .card {
+      background: var(--white);
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border-top: 4px solid var(--primary-green);
+    }
+
+    .card h3 {
+      color: var(--primary-green);
+      margin-bottom: 12px;
+    }
+
+    .product-card {
+      background: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+      border: 1px solid #eee;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .product-info h3 {
+      color: var(--primary-green);
+      margin-bottom: 8px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--light-green);
+      color: var(--primary-green);
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+
+    /* Table Styling */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: var(--white);
+    }
+
+    table th, table td {
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    table th {
+      background-color: var(--primary-green);
+      color: var(--white);
+    }
+
+    table tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    /* Form Styling */
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      color: #aaa;
+      padding: 50px 5% 20px 5%;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      color: var(--white);
+      margin-bottom: 15px;
+      border-bottom: 2px solid var(--dark-red);
+      padding-bottom: 5px;
+      display: inline-block;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-col ul li a {
+      color: #aaa;
+      text-decoration: none;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid #333;
+      padding-top: 20px;
+      font-size: 0.85rem;
+    }
+
+    /* Process Line Flowchart */
+    .process-step {
+      background: var(--light-green);
+      padding: 15px;
+      border-radius: 6px;
+      text-align: center;
+      font-weight: bold;
+      color: var(--primary-green);
+      border: 1px solid var(--accent-green);
+    }
+		
+	.image-logo { display: flex; align-items: center; transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important; will-change: transform; }
+	.image-logo img { height: 78px; width: auto; pointer-events: none; }
+	.image-logo:hover { transform: scale(1.08) !important; }
+	
+  </style>
+</head>
+<body>
+
+  <!-- Top Contact Bar -->
+  <div class="top-bar">
+    <div>
+      📧 info@twoparrotsenterprise.com | tum@two-parrots.com | 📞 +855 12 628 988
+    </div>
+    <div>
+      <span>Global Reach: Australia | USA | Japan | EU | New Zealand</span>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo" onclick="switchTab('home')">
+        <div class="image-logo"><img src="images/logo.png" alt="Two Parrots Group Australia Logo"></div>
+        <div class="logo-text">
+          <h1>Two Parrots</h1>
+          <span>ENTERPRISE & TRADING SOLUTIONS</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a id="nav-home" class="active" onclick="switchTab('home')">Home</a></li>
+          <li><a id="nav-products" onclick="switchTab('products')">Products</a></li>
+          <li><a id="nav-factory" onclick="switchTab('factory')">Bio & Factory</a></li>
+          <li><a id="nav-about" onclick="switchTab('about')">About Us</a></li>
+          <li><a id="nav-contact" onclick="switchTab('contact')">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== HOME TAB ==================== -->
+  <div id="home" class="tab-content active">
+    <section class="hero">
+      <h2>From Cambodian Agriculture To Global Markets</h2>
+      <p>Connecting local farmers with domestic and international markets through quality-focused processing, traceable sourcing, and export-ready agricultural products.</p>
+      <button class="btn" onclick="switchTab('products')">Explore Our Products</button>
+    </section>
+
+    <div class="container">
+      <div class="section-title">
+        <h2>Why Two Parrots?</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Single-Origin Cambodian Pepper</h3>
+          <p>Distinct, traceable origin that stands apart from blended supply, offering differentiated provenance and rich flavor.</p>
+        </div>
+        <div class="card">
+          <h3>Direct, Traceable Supply Chain</h3>
+          <p>Sourced directly from smallholder farmers and Pepper Agricultural Cooperatives with full farm-to-pack visibility.</p>
+        </div>
+        <div class="card">
+          <h3>Certified Quality & Food Safety</h3>
+          <p>Global GAP, GMP, and HACCP certified operations featuring steam-sterilized products meeting global export standards.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 60px;">
+        <div class="section-title">
+          <h2>Market Traction & Capability</h2>
+        </div>
+        <div class="grid-4" style="text-align: center;">
+          <div class="card">
+            <h3 style="font-size: 2rem; color: var(--dark-red);">70%</h3>
+            <p>Estimated share of Cambodia's domestic branded pepper market</p>
+          </div>
+          <div class="card">
+            <h3 style="font-size: 2rem; color: var(--dark-red);">3,600 MT</h3>
+            <p>Annual Black Pepper processing capacity</p>
+          </div>
+          <div class="card">
+            <h3 style="font-size: 2rem; color: var(--dark-red);">1,800 MT</h3>
+            <p>Annual White Pepper processing capacity</p>
+          </div>
+          <div class="card">
+            <h3 style="font-size: 2rem; color: var(--dark-red);">350+ MT</h3>
+            <p>Annual pepper sales over the past 5 years</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PRODUCTS TAB ==================== -->
+  <div id="products" class="tab-content">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Premium Product Range</h2>
+      </div>
+
+      <h3 style="color: var(--primary-green); margin-bottom: 20px; border-bottom: 2px solid var(--primary-green); padding-bottom: 5px;">1. Pepper & Spices</h3>
+      <div class="grid-3" style="margin-bottom: 40px;">
+        <div class="product-card">
+          <div class="product-info">
+            <span class="badge">Spices</span>
+            <h3>Ground Pepper / Pepper Powder</h3>
+            <p>Finely processed pepper for cooking and seasoning.</p>
+            <p><strong>Available Sizes:</strong> 20g, 50g, 250g, 650g</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-info">
+            <span class="badge">Spices</span>
+            <h3>Whole Black Peppercorn</h3>
+            <p>Bold aroma and rich flavor, perfect for cooking and seasoning.</p>
+            <p><strong>Density:</strong> ≥550 g/l | Moisture: ≤12%</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-info">
+            <span class="badge">Spices</span>
+            <h3>Whole White Peppercorn</h3>
+            <p>Smooth, refined pepper with a milder taste and bold aroma.</p>
+            <p><strong>Density:</strong> 630 g/l | Moisture: ≤12%</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-info">
+            <span class="badge">Spices</span>
+            <h3>Diced Pearl Pepper</h3>
+            <p>Pepper peel cut into small pieces offering strong aroma for soups, sauces, and marinades.</p>
+            <p><strong>Available Size:</strong> 150g</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-info">
+            <span class="badge">Spices</span>
+            <h3>Pepper & Salt Mix</h3>
+            <p>Ready-to-use blend of premium pepper and natural salt.</p>
+            <p><strong>Available Size:</strong> 25g</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="color: var(--primary-green); margin-bottom: 20px; border-bottom: 2px solid var(--primary-green); padding-bottom: 5px;">2. Rice Flours & Instant Food</h3>
+      <div class="grid-3" style="margin-bottom: 40px;">
+        <div class="product-card">
+          <div class="product-info">
+            <span class="badge">Flour</span>
+            <h3>Finest Rice Flour</h3>
+            <p>High-quality milled rice flour used for noodles, pastries, and desserts.</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-info">
+            <span class="badge">Flour</span>
+            <h3>Glutinous Rice Flour</h3>
+            <p>Smooth, elastic sticky rice flour ideal for traditional cakes and sweets.</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-info">
+            <span class="badge">Specialty Flour</span>
+            <h3>Crispy Tempura / Pancake / Fried Banana Flour</h3>
+            <p>Convenient baking and frying mixes for commercial and household preparation.</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-info">
+            <span class="badge">Instant Food</span>
+            <h3>Khmer Rice Instant Noodle</h3>
+            <p>Convenient, flavorful instant noodles inspired by authentic Khmer recipes.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title">
+        <h2>Export & Technical Specifications</h2>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Product Grade</th>
+            <th>Size / Mesh</th>
+            <th>Moisture</th>
+            <th>Sterilization & Certifications</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Black Pepper - Whole</td>
+            <td>≥ 4mm (550 g/l)</td>
+            <td>≤ 12%</td>
+            <td>Steam-Sterilized, Global GAP, GMP, HACCP</td>
+          </tr>
+          <tr>
+            <td>White Pepper - Whole</td>
+            <td>≥ 4mm (630 g/l)</td>
+            <td>≤ 12%</td>
+            <td>Steam-Sterilized, Global GAP, GMP, HACCP</td>
+          </tr>
+          <tr>
+            <td>Fine Ground Black Pepper</td>
+            <td>40 mesh</td>
+            <td>≤ 12%</td>
+            <td>Steam-Sterilized, Organic / Non-Organic options</td>
+          </tr>
+          <tr>
+            <td>Fine Ground White Pepper</td>
+            <td>60 mesh</td>
+            <td>≤ 12%</td>
+            <td>Steam-Sterilized, Organic / Non-Organic options</td>
+          </tr>
+          <tr>
+            <td>Crushed Black Pepper</td>
+            <td>10-20 mesh</td>
+            <td>≤ 12%</td>
+            <td>Steam-Sterilized, Global GAP, GMP, HACCP</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">Available packaging formats: 25kg bulk bags, 1kg, 650g, 500g, and custom private/white-label options.</p>
+    </div>
+  </div>
+
+  <!-- ==================== BIO & FACTORY TAB ==================== -->
+  <div id="factory" class="tab-content">
+    <div class="container">
+      <div class="section-title">
+        <h2>Processing Facility & Quality Assurance</h2>
+      </div>
+      
+      <div class="grid-2" style="margin-bottom: 40px;">
+        <div>
+          <h3>Dedicated Infrastructure</h3>
+          <p>Headquartered in Phnom Penh, Two Parrots operates a specialized pepper and agri-food processing facility designed to meet international food safety standards.</p>
+          <ul style="margin-left: 20px; margin-top: 10px;">
+            <li><strong>Combined Capacity:</strong> 3,600 MT Black Pepper & 1,800 MT White Pepper annually.</li>
+            <li><strong>Sterilization:</strong> Advanced steam-sterilization system ensuring product safety for international markets.</li>
+            <li><strong>Quality Management System:</strong> Internal Control System (ICS) complying with GGAP, GAP, SRP, and Organic standards.</li>
+            <li><strong>Certifications:</strong> GMP, HACCP, Global GAP, FDA registered, USDA Organic certified.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Quality Management System (QMS)</h3>
+          <p>Our internal quality assurance team and external experts handle rigorous monitoring at every stage of the processing line.</p>
+          <p><strong>Testing Protocol:</strong> Comprehensive Microbiological, Chemical, and Physical testing before export.</p>
+        </div>
+      </div>
+
+      <div class="section-title">
+        <h2>Processing Line Flowchart</h2>
+      </div>
+      <div class="grid-4" style="margin-bottom: 40px;">
+        <div class="process-step">1. Feeding Area</div>
+        <div class="process-step">2. Dust Separator & Destoner</div>
+        <div class="process-step">3. Destoner Stage 1 & 2</div>
+        <div class="process-step">4. Dust & Fine Separator</div>
+        <div class="process-step">5. Metal Detector</div>
+        <div class="process-step">6. Storage Silos (4 x 10T)</div>
+        <div class="process-step">7. Steam Sterilization</div>
+        <div class="process-step">8. Grinding & Packaging</div>
+      </div>
+
+      <div class="section-title">
+        <h2>Leadership Team</h2>
+      </div>
+      <div class="grid-4">
+        <div class="card">
+          <h4>Mr. TRY SENHOEUN</h4>
+          <span style="color: var(--dark-red); font-size: 0.85rem; font-weight: bold;">Founder & Chairman</span>
+          <p style="font-size: 0.85rem; margin-top: 8px;">20 years experience in agribusiness, supply chain development, and brand growth.</p>
+        </div>
+        <div class="card">
+          <h4>Mrs. TO SONY</h4>
+          <span style="color: var(--dark-red); font-size: 0.85rem; font-weight: bold;">Founder & CEO</span>
+          <p style="font-size: 0.85rem; margin-top: 8px;">18 years experience in agribusiness and food value chains.</p>
+        </div>
+        <div class="card">
+          <h4>Mr. NOUN TUM</h4>
+          <span style="color: var(--dark-red); font-size: 0.85rem; font-weight: bold;">Managing Director</span>
+          <p style="font-size: 0.85rem; margin-top: 8px;">16 years experience in fund raising, business planning, and trade.</p>
+        </div>
+        <div class="card">
+          <h4>Ms. HENG SOCHEATA</h4>
+          <span style="color: var(--dark-red); font-size: 0.85rem; font-weight: bold;">Operation Manager</span>
+          <p style="font-size: 0.85rem; margin-top: 8px;">10 years experience overseeing daily operations and supply chains.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== ABOUT US TAB ==================== -->
+  <div id="about" class="tab-content">
+    <div class="container">
+      <div class="section-title">
+        <h2>About Two Parrots Enterprise</h2>
+      </div>
+      <p style="text-align: center; max-width: 900px; margin: 0 auto 40px auto; font-size: 1.1rem;">
+        Established in 2009 and headquartered in Phnom Penh, Two Parrots Enterprise is a growing Cambodian agri-food business dedicated to producing, processing, and distributing high-quality spices, rice-based flours, and instant food products. In 2025, Two Parrots Trading Solutions Co., Ltd. was incorporated to scale export operations worldwide.
+      </p]
+
+      <div class="grid-2" style="margin-bottom: 40px;">
+        <div class="card">
+          <h3>Our Mission</h3>
+          <p>To deliver safe, high-quality, and affordable Cambodian food products that enrich the daily lives of our consumers while supporting local farmers and promoting sustainable agriculture.</p]
+        </div>
+        <div class="card">
+          <h3>Our Vision</h3>
+          <p>To become a trusted and leading brand in the spice, rice flour, and instant food industry across Cambodia and beyond.</p>
+        </div>
+      </div>
+
+      <div class="section-title">
+        <h2>Core Values</h2>
+      </div>
+      <div class="grid-4" style="margin-bottom: 40px;">
+        <div class="card">
+          <h4>Quality First</h4>
+          <p>Commitment to maintaining high product standards and international food safety compliance.</p>
+        </div>
+        <div class="card">
+          <h4>Sustainability</h4>
+          <p>Working closely with local farmers to ensure fair trade and environmentally friendly practices.</p]
+        </div>
+        <div class="card">
+          <h4>Innovation</h4>
+          <p>Developing diverse, value-added products to meet modern consumer demands.</p]
+        </div>
+        <div class="card">
+          <h4>Trust & Integrity</h4>
+          <p>Building long-term partnerships with customers, suppliers, and farming communities.</p]
+        </div>
+      </div>
+
+      <div class="section-title">
+        <h2>Development Partners & ESG</h2>
+      </div>
+      <div class="card">
+        <p>Two Parrots actively collaborates with international development partners including <strong>Australian Aid (CAPRED)</strong>, <strong>European Union / GIZ</strong>, <strong>USAID / Harvest3</strong>, and the <strong>Asian Development Bank (ADB Frontier)</strong> to upgrade smallholder value chains and help farmers secure Global G.A.P. international certifications.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== CONTACT US TAB ==================== -->
+  <div id="contact" class="tab-content">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contact Two Parrots</h2>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <h3>Get In Touch</h3>
+          <p style="margin-bottom: 20px;">We welcome inquiries from international buyers, distributors, retailers, and strategic partners interested in bulk, white-label, or branded products.</p>
+
+          <div style="margin-bottom: 15px;">
+            <strong>📍 Head Office & Processing Facility:</strong>
+            <p>Prek Tanou Village, Sangkat Chak Angre Leu, Khan Meanchey, Phnom Penh, Cambodia</p>
+          </div>
+
+          <div style="margin-bottom: 15px;">
+            <strong>📞 Phone / WhatsApp:</strong>
+            <p>+855 12 628 988 | +855 86 45 2020 | +812 228 086</p>
+          </div>
+
+          <div style="margin-bottom: 15px;">
+            <strong>📧 Email:</strong>
+            <p>twoparrotskh@gmail.com / tum@two-parrots.com</p>
+          </div>
+
+          <div style="margin-bottom: 15px;">
+            <strong>🌐 Web & Facebook:</strong>
+            <p>www.two-parrots.com | សហគ្រាសសេកពីរ Two Parrots Enterprise</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Send Us a Message</h3>
+          <form onsubmit="event.preventDefault(); alert('Thank you for contacting Two Parrots Enterprise. We will respond shortly!');">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" required placeholder="John Doe">
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" required placeholder="john@example.com">
+            </div>
+            <div class="form-group">
+              <label>Inquiry Type</label>
+              <input type="text" placeholder="Bulk Order / White Label / Distribution">
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea rows="4" required placeholder="Your message details..."></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Two Parrots</h4>
+        <p>Connecting Cambodian agriculture to global markets with authentic, traceable, and premium quality products.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a onclick="switchTab('home')">Home</a></li>
+          <li><a onclick="switchTab('products')">Products</a></li>
+          <li><a onclick="switchTab('factory')">Bio & Factory</a></li>
+          <li><a onclick="switchTab('about')">About Us</a></li>
+          <li><a onclick="switchTab('contact')">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Product Range</h4>
+        <ul>
+          <li>Ground & Whole Pepper</li>
+          <li>Diced Pearl Pepper</li>
+          <li>Finest & Glutinous Rice Flour</li>
+          <li>Khmer Instant Noodle</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Certifications</h4>
+        <ul>
+          <li>Global G.A.P. Certified</li>
+          <li>GMP & HACCP Compliant</li>
+          <li>FDA Registered</li>
+          <li>USDA Organic</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Two Parrots Enterprise / Two Parrots Trading Solutions Co., Ltd. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Tab Switching -->
+  <script>
+    function switchTab(tabId) {
+      // Hide all tabs
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(content => content.classList.remove('active'));
+
+      // Deactivate all nav links
+      const navLinks = document.querySelectorAll('nav ul li a');
+      navLinks.forEach(link => link.classList.remove('active'));
+
+      // Show target tab
+      document.getElementById(tabId).classList.add('active');
+
+      // Set active nav link
+      const activeNav = document.getElementById('nav-' + tabId);
+      if (activeNav) {
+        activeNav.classList.add('active');
+      }
+
+      // Scroll smoothly to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
