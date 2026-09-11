@@ -38,6 +38,8 @@
       display: flex;
       justify-content: space-between;
       font-size: 0.85rem;
+      flex-wrap: wrap;
+      gap: 5px;
     }
 
     .top-bar a {
@@ -61,6 +63,7 @@
       padding: 15px 5%;
       max-width: 1200px;
       margin: 0 auto;
+      position: relative;
     }
 
     .logo {
@@ -98,6 +101,7 @@
       display: block;
     }
 
+    /* Navigation Links */
     nav ul {
       display: flex;
       list-style: none;
@@ -113,11 +117,34 @@
       border-radius: 4px;
       transition: all 0.3s ease;
       cursor: pointer;
+      display: block;
     }
 
     nav ul li a:hover, nav ul li a.active {
       background-color: var(--primary-green);
       color: var(--white);
+    }
+
+    /* Mobile Hamburger Menu Toggle Button */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 21px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .menu-toggle span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background-color: var(--primary-green);
+      border-radius: 3px;
+      transition: all 0.3s ease;
     }
 
     /* Tab Sections */
@@ -134,16 +161,16 @@
       background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
       color: var(--white);
       text-align: center;
-      padding: 100px 20px;
+      padding: 80px 20px;
     }
 
     .hero h2 {
-      font-size: 2.8rem;
+      font-size: 2.2rem;
       margin-bottom: 15px;
     }
 
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       max-width: 800px;
       margin: 0 auto 25px auto;
     }
@@ -169,7 +196,7 @@
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 60px 20px;
+      padding: 40px 20px;
     }
 
     .section-title {
@@ -198,19 +225,19 @@
 
     .grid-2 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
     }
 
     .grid-3 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 25px;
     }
 
     .grid-4 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
     }
 
@@ -261,12 +288,18 @@
       margin-bottom: 10px;
     }
 
-    /* Table Styling */
+    /* Table Styling & Overflow Container for Mobile */
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
       background: var(--white);
+      min-width: 600px;
     }
 
     table th, table td {
@@ -313,7 +346,7 @@
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 30px;
       margin-bottom: 40px;
     }
@@ -337,6 +370,7 @@
     .footer-col ul li a {
       color: #aaa;
       text-decoration: none;
+      cursor: pointer;
     }
 
     .footer-bottom {
@@ -356,11 +390,62 @@
       color: var(--primary-green);
       border: 1px solid var(--accent-green);
     }
-		
-	.image-logo { display: flex; align-items: center; transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important; will-change: transform; }
-	.image-logo img { height: 78px; width: auto; pointer-events: none; }
-	.image-logo:hover { transform: scale(1.08) !important; }
-	
+
+    .image-logo { display: flex; align-items: center; transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important; will-change: transform; }
+    .image-logo img { height: 60px; width: auto; pointer-events: none; }
+    .image-logo:hover { transform: scale(1.08) !important; }
+
+    /* MOBILE SPECIFIC CSS */
+    @media (max-width: 768px) {
+      .top-bar {
+        font-size: 0.75rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        padding: 15px 0;
+      }
+
+      nav.open {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 5%;
+      }
+
+      nav ul li a {
+        padding: 12px 15px;
+        font-size: 1.05rem;
+      }
+
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+
+      .logo-text h1 {
+        font-size: 1.1rem;
+      }
+
+      .logo-text span {
+        font-size: 0.65rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -368,7 +453,7 @@
   <!-- Top Contact Bar -->
   <div class="top-bar">
     <div>
-      📧 info@twoparrotsenterprise.com | tum@two-parrots.com | 📞 +855 12 628 988
+      📧 info@twoparrotsenterprise.com | 📞 +855 12 628 988
     </div>
     <div>
       <span>Global Reach: Australia | USA | Japan | EU | New Zealand</span>
@@ -382,10 +467,18 @@
         <div class="image-logo"><img src="images/logo.png" alt="Two Parrots Group Australia Logo"></div>
         <div class="logo-text">
           <h1>Two Parrots</h1>
-          <span>ENTERPRISE & TRADING SOLUTIONS</span>
+          <span>ENTERPRISE</span>
         </div>
       </a>
-      <nav>
+
+      <!-- Hamburger Button for Mobile -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="nav-menu">
         <ul>
           <li><a id="nav-home" class="active" onclick="switchTab('home')">Home</a></li>
           <li><a id="nav-products" onclick="switchTab('products')">Products</a></li>
@@ -464,14 +557,14 @@
             <span class="badge">Spices</span>
             <h3>Ground Pepper / Pepper Powder</h3>
             <p>Finely processed pepper for cooking and seasoning.</p>
-            <p><strong>Available Sizes:</strong> 20g, 50g, 250g, 650g</p>
+            <p><strong>Available Sizes:</strong> 20g, 50g, 250g, 650g</p>[cite: 2]
           </div>
         </div>
         <div class="product-card">
           <div class="product-info">
             <span class="badge">Spices</span>
             <h3>Whole Black Peppercorn</h3>
-            <p>Bold aroma and rich flavor, perfect for cooking and seasoning.</p>
+            <p>Bold aroma and rich flavor, perfect for cooking and seasoning.</p>[cite: 2]
             <p><strong>Density:</strong> ≥550 g/l | Moisture: ≤12%</p>
           </div>
         </div>
@@ -487,16 +580,16 @@
           <div class="product-info">
             <span class="badge">Spices</span>
             <h3>Diced Pearl Pepper</h3>
-            <p>Pepper peel cut into small pieces offering strong aroma for soups, sauces, and marinades.</p>
-            <p><strong>Available Size:</strong> 150g</p>
+            <p>Pepper peel cut into small pieces offering strong aroma for soups, sauces, and marinades.</p>[cite: 2]
+            <p><strong>Available Size:</strong> 150g</p>[cite: 2]
           </div>
         </div>
         <div class="product-card">
           <div class="product-info">
             <span class="badge">Spices</span>
             <h3>Pepper & Salt Mix</h3>
-            <p>Ready-to-use blend of premium pepper and natural salt.</p>
-            <p><strong>Available Size:</strong> 25g</p>
+            <p>Ready-to-use blend of premium pepper and natural salt.</p>[cite: 2]
+            <p><strong>Available Size:</strong> 25g</p>[cite: 2]
           </div>
         </div>
       </div>
@@ -536,48 +629,50 @@
       <div class="section-title">
         <h2>Export & Technical Specifications</h2>
       </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Product Grade</th>
-            <th>Size / Mesh</th>
-            <th>Moisture</th>
-            <th>Sterilization & Certifications</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Black Pepper - Whole</td>
-            <td>≥ 4mm (550 g/l)</td>
-            <td>≤ 12%</td>
-            <td>Steam-Sterilized, Global GAP, GMP, HACCP</td>
-          </tr>
-          <tr>
-            <td>White Pepper - Whole</td>
-            <td>≥ 4mm (630 g/l)</td>
-            <td>≤ 12%</td>
-            <td>Steam-Sterilized, Global GAP, GMP, HACCP</td>
-          </tr>
-          <tr>
-            <td>Fine Ground Black Pepper</td>
-            <td>40 mesh</td>
-            <td>≤ 12%</td>
-            <td>Steam-Sterilized, Organic / Non-Organic options</td>
-          </tr>
-          <tr>
-            <td>Fine Ground White Pepper</td>
-            <td>60 mesh</td>
-            <td>≤ 12%</td>
-            <td>Steam-Sterilized, Organic / Non-Organic options</td>
-          </tr>
-          <tr>
-            <td>Crushed Black Pepper</td>
-            <td>10-20 mesh</td>
-            <td>≤ 12%</td>
-            <td>Steam-Sterilized, Global GAP, GMP, HACCP</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Product Grade</th>
+              <th>Size / Mesh</th>
+              <th>Moisture</th>
+              <th>Sterilization & Certifications</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Black Pepper - Whole</td>
+              <td>≥ 4mm (550 g/l)</td>
+              <td>≤ 12%</td>
+              <td>Steam-Sterilized, Global GAP, GMP, HACCP</td>
+            </tr>
+            <tr>
+              <td>White Pepper - Whole</td>
+              <td>≥ 4mm (630 g/l)</td>
+              <td>≤ 12%</td>
+              <td>Steam-Sterilized, Global GAP, GMP, HACCP</td>
+            </tr>
+            <tr>
+              <td>Fine Ground Black Pepper</td>
+              <td>40 mesh</td>
+              <td>≤ 12%</td>
+              <td>Steam-Sterilized, Organic / Non-Organic options</td>
+            </tr>
+            <tr>
+              <td>Fine Ground White Pepper</td>
+              <td>60 mesh</td>
+              <td>≤ 12%</td>
+              <td>Steam-Sterilized, Organic / Non-Organic options</td>
+            </tr>
+            <tr>
+              <td>Crushed Black Pepper</td>
+              <td>10-20 mesh</td>
+              <td>≤ 12%</td>
+              <td>Steam-Sterilized, Global GAP, GMP, HACCP</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">Available packaging formats: 25kg bulk bags, 1kg, 650g, 500g, and custom private/white-label options.</p>
     </div>
   </div>
@@ -657,12 +752,12 @@
       </div>
       <p style="text-align: center; max-width: 900px; margin: 0 auto 40px auto; font-size: 1.1rem;">
         Established in 2009 and headquartered in Phnom Penh, Two Parrots Enterprise is a growing Cambodian agri-food business dedicated to producing, processing, and distributing high-quality spices, rice-based flours, and instant food products. In 2025, Two Parrots Trading Solutions Co., Ltd. was incorporated to scale export operations worldwide.
-      </p]
+      </p>
 
       <div class="grid-2" style="margin-bottom: 40px;">
         <div class="card">
           <h3>Our Mission</h3>
-          <p>To deliver safe, high-quality, and affordable Cambodian food products that enrich the daily lives of our consumers while supporting local farmers and promoting sustainable agriculture.</p]
+          <p>To deliver safe, high-quality, and affordable Cambodian food products that enrich the daily lives of our consumers while supporting local farmers and promoting sustainable agriculture.</p>
         </div>
         <div class="card">
           <h3>Our Vision</h3>
@@ -680,15 +775,15 @@
         </div>
         <div class="card">
           <h4>Sustainability</h4>
-          <p>Working closely with local farmers to ensure fair trade and environmentally friendly practices.</p]
+          <p>Working closely with local farmers to ensure fair trade and environmentally friendly practices.</p>
         </div>
         <div class="card">
           <h4>Innovation</h4>
-          <p>Developing diverse, value-added products to meet modern consumer demands.</p]
+          <p>Developing diverse, value-added products to meet modern consumer demands.</p>
         </div>
         <div class="card">
           <h4>Trust & Integrity</h4>
-          <p>Building long-term partnerships with customers, suppliers, and farming communities.</p]
+          <p>Building long-term partnerships with customers, suppliers, and farming communities.</p>
         </div>
       </div>
 
@@ -719,18 +814,18 @@
           </div>
 
           <div style="margin-bottom: 15px;">
-            <strong>📞 Phone / WhatsApp:</strong>
-            <p>+855 12 628 988 | +855 86 45 2020 | +812 228 086</p>
+            <strong>📞 Phone / Telegram:</strong>
+            <p>+855 12 628 988 | +855 86 45 2020 | +855 12 228 086</p>
           </div>
 
           <div style="margin-bottom: 15px;">
             <strong>📧 Email:</strong>
-            <p>twoparrotskh@gmail.com / tum@two-parrots.com</p>
+            <p>info@twoparrotsenterprise.com </p>
           </div>
 
           <div style="margin-bottom: 15px;">
             <strong>🌐 Web & Facebook:</strong>
-            <p>www.two-parrots.com | សហគ្រាសសេកពីរ Two Parrots Enterprise</p>
+            <p>www.twoparrotsenterprise.com | សហគ្រាសសេកពីរ Two Parrots Enterprise</p>
           </div>
         </div>
 
@@ -801,8 +896,16 @@
     </div>
   </footer>
 
-  <!-- JavaScript for Tab Switching -->
+  <!-- JavaScript for Tab Switching & Mobile Menu -->
   <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    // Toggle Mobile Navigation
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+
     function switchTab(tabId) {
       // Hide all tabs
       const contents = document.querySelectorAll('.tab-content');
@@ -820,6 +923,9 @@
       if (activeNav) {
         activeNav.classList.add('active');
       }
+
+      // Close mobile menu if open
+      navMenu.classList.remove('open');
 
       // Scroll smoothly to top
       window.scrollTo({ top: 0, behavior: 'smooth' });
