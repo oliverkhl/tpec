@@ -380,6 +380,16 @@
       padding-top: 20px;
       font-size: 0.85rem;
     }
+	
+		
+	.footer-logo { height: 60px; margin-bottom: 20px; display: inline-block; transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease; will-change: transform; cursor: pointer;
+	}
+
+	.footer-logo:hover { transform: scale(1.1) translateY(-4px); filter: drop-shadow(0 6px 12px rgba(203, 32, 39, 0.35)); /* Subtle red accent glow */
+	}
+
+	.footer-logo:active { transform: scale(0.98) translateY(0);
+	}
 
     /* Process Line Flowchart */
     .process-step {
@@ -465,7 +475,7 @@
   <header>
     <div class="nav-container">
       <a href="#" class="logo" onclick="switchTab('home')">
-        <div class="image-logo"><img src="images/logo.png" alt="Two Parrots Group Australia Logo"></div>
+        <div class="image-logo"><img src="images/logo.png" alt="Two Parrots Enterprise Logo"></div>
         <div class="logo-text">
           <h1>Two Parrots</h1>
           <span>ENTERPRISE</span>
@@ -862,6 +872,15 @@
       <div class="footer-col">
         <h4>Two Parrots</h4>
         <p>Connecting Cambodian agriculture to global markets with authentic, traceable, and premium quality products.</p>
+		<a href="https://twoparrotsenterprise.com/" target="_blank" rel="noopener noreferrer">
+			<img src="images/logo.png" alt="Two Parrots Trading Solutions Logo" class="footer-logo">
+		</a>
+		<a href="https://www.two-parrots.com" target="_blank" rel="noopener noreferrer">
+			<img src="images/logo2.png" alt="Two Parrots Trading Solutions Logo" class="footer-logo">
+		</a>
+		<a href="https://twoparrotsgroup.com.au/" target="_blank" rel="noopener noreferrer">
+			<img src="images/logo1.png" alt="Two Parrots Trading Solutions Logo" class="footer-logo">
+		</a>
       </div>
       <div class="footer-col">
         <h4>Quick Links</h4>
